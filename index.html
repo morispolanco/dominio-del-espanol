@@ -189,10 +189,90 @@
             margin-bottom: 0;
         }
         
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-card::before {
+            content: """;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 80px;
+            color: rgba(26, 58, 95, 0.1);
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            background-color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .author-info h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            font-size: 14px;
+            color: var(--gray-color);
+            margin-bottom: 0;
+        }
+        
         /* Modules Section */
         .modules {
             padding: 80px 0;
-            background-color: var(--light-color);
         }
         
         .modules-grid {
@@ -248,6 +328,7 @@
         /* Course Details Section */
         .course-details {
             padding: 80px 0;
+            background-color: var(--light-color);
         }
         
         .course-content {
@@ -319,6 +400,33 @@
             position: absolute;
             left: 0;
             color: var(--accent-color);
+        }
+        
+        .creator-info {
+            background-color: rgba(26, 58, 95, 0.05);
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin-top: 25px;
+            font-style: italic;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .creator-info strong {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        .creator-link {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-bottom: 1px dashed transparent;
+        }
+        
+        .creator-link:hover {
+            border-bottom-color: var(--secondary-color);
         }
         
         /* Pricing Section */
@@ -466,7 +574,33 @@
         }
         
         footer p {
-            margin-bottom: 0;
+            margin-bottom: 10px;
+        }
+        
+        footer .creator-info {
+            background: none;
+            border: none;
+            padding: 0;
+            margin-top: 10px;
+            font-style: normal;
+            color: #ddd;
+            font-size: 14px;
+        }
+        
+        footer .creator-info strong {
+            color: var(--accent-color);
+        }
+        
+        footer .creator-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-bottom: 1px dashed transparent;
+        }
+        
+        footer .creator-link:hover {
+            border-bottom-color: var(--accent-color);
         }
         
         /* Responsive */
@@ -515,7 +649,6 @@
             </div>
         </div>
     </header>
-
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
@@ -525,7 +658,6 @@
             <a href="https://dominio-panhispanico.vercel.app/" target="_blank" class="cta-button demo-button">Ver demo</a>
         </div>
     </section>
-
     <!-- Benefits Section -->
     <section class="benefits">
         <div class="container">
@@ -549,7 +681,50 @@
             </div>
         </div>
     </section>
-
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Testimonios de profesionales</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Este curso transformó mi manera de escribir. Ahora redacto con mayor precisión y seguridad. ¡Recomendado 100%!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">LS</div>
+                            <div class="author-info">
+                                <h4>Lorena de Salazar</h4>
+                                <p>Periodista</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Como profesional del derecho, la claridad en la escritura es fundamental. Este curso me ha ayudado a mejorar mis documentos legales."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">OF</div>
+                            <div class="author-info">
+                                <h4>Óscar Fuentes</h4>
+                                <p>Abogado</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"El contenido es de excelente calidad y muy práctico. Lo aplico diariamente en mi trabajo académico y en mis publicaciones."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">IS</div>
+                            <div class="author-info">
+                                <h4>Inés Salgado</h4>
+                                <p>Profesora universitaria</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Modules Section -->
     <section class="modules">
         <div class="container">
@@ -621,7 +796,6 @@
             </div>
         </div>
     </section>
-
     <!-- Course Details Section -->
     <section class="course-details">
         <div class="container">
@@ -642,29 +816,30 @@
                         <li>Recursos adicionales y consultas especializadas</li>
                     </ul>
                     <p>Todo el contenido se basa en el libro de estilo de la lengua española según la norma panhispánica, asegurando que adquiera conocimientos de la máxima autoridad lingüística.</p>
+                    <div class="creator-info">
+                        <strong>Creador por el Dr. <a href="https://agl.org.gt/academicos/moris-alberto-polanco-barrera/" target="_blank" class="creator-link">Moris Polanco</a></strong>, miembro de la Academia Guatemalteca de la Lengua, correspondiente de la Real Academia Española.
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Pricing Section -->
     <section class="pricing">
         <div class="container">
             <h2 class="section-title">Inversión en su desarrollo profesional</h2>
             <div class="price-card">
                 <h3>Licencia de por vida</h3>
-                <div class="price">$49.00</div>
+                <div class="price">$79.00</div>
                 <div class="price-period">Acceso ilimitado a todos los contenidos y actualizaciones</div>
                 <p>Una sola inversión para mejorar permanentemente su comunicación escrita y proyectar una imagen profesional impecable.</p>
             </div>
         </div>
     </section>
-
     <!-- CTA Section -->
     <section class="cta-section" id="contact">
         <div class="container">
             <h3>¿Listo para elevar su dominio del español?</h3>
-            <p>Solicite hoy mismo su licencia de por vida por solo $49.00 y comience a transformar sus habilidades de redacción profesional.</p>
+            <p>Solicite hoy mismo su licencia de por vida por solo $79.00 y comience a transformar sus habilidades de redacción profesional.</p>
             
             <form id="contact-form" class="contact-form" action="https://formspree.io/f/xanbbgdy" method="POST">
                 <div class="form-group">
@@ -684,14 +859,15 @@
             </form>
         </div>
     </section>
-
     <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2025 Dominio del español. Todos los derechos reservados. Basado en el libro de estilo de la lengua española según la norma panhispánica.</p>
+            <div class="creator-info">
+                Creador por el Dr. <a href="https://agl.org.gt/academicos/moris-alberto-polanco-barrera/" target="_blank" class="creator-link">Moris Polanco</a>, miembro de la Academia Guatemalteca de la Lengua, correspondiente de la Real Academia Española.
+            </div>
         </div>
     </footer>
-
     <script>
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
