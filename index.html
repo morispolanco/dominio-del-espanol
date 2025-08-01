@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asesoría Lingüística - Dominio del Español</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a3a5f;
+            --secondary-color: #c9302c;
+            --accent-color: #d4af37;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --gray-color: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #fff;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            font-size: 32px;
+            margin-right: 15px;
+            color: var(--accent-color);
+        }
+        
+        .logo h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4eaf5 100%);
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--dark-color);
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background-color: #a02622;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(201, 48, 44, 0.3);
+        }
+        
+        .demo-button {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .demo-button:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 15px auto 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefit-card i {
+            font-size: 48px;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .benefit-card p {
+            color: var(--gray-color);
+            margin-bottom: 0;
+        }
+        
+        /* Modules Section */
+        .modules {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+        
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .module-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: flex-start;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .module-icon {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-right: 20px;
+            background-color: rgba(26, 58, 95, 0.1);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .module-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .module-content p {
+            color: var(--gray-color);
+            margin-bottom: 0;
+            font-size: 15px;
+        }
+        
+        /* Course Details Section */
+        .course-details {
+            padding: 80px 0;
+        }
+        
+        .course-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .course-image {
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            background-color: #f0f0f0;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .course-image img {
+            max-width: 100%;
+            display: block;
+            transition: transform 0.5s ease;
+            width: 100%;
+            height: auto;
+        }
+        
+        .course-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .course-image .fallback-icon {
+            font-size: 80px;
+            color: var(--primary-color);
+            opacity: 0.7;
+        }
+        
+        .course-info h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .course-info p {
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+        
+        .course-info ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .course-info li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .course-info li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .price-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .price-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        
+        .price-period {
+            font-size: 18px;
+            color: var(--gray-color);
+            margin-bottom: 30px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-section h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Form Styles */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .contact-form .cta-button {
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .form-message {
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+        }
+        
+        .success-message {
+            background-color: rgba(40, 167, 69, 0.2);
+            border: 1px solid rgba(40, 167, 69, 0.5);
+            color: #fff;
+        }
+        
+        .error-message {
+            background-color: rgba(220, 53, 69, 0.2);
+            border: 1px solid rgba(220, 53, 69, 0.5);
+            color: #fff;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        footer p {
+            margin-bottom: 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero h2 {
+                font-size: 20px;
+            }
+            
+            .course-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .price {
+                font-size: 36px;
+            }
+            
+            .contact-form {
+                padding: 20px;
+            }
+            
+            .module-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .module-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-feather-alt"></i>
+                    <h1>Dominio del Español</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Perfeccione su dominio del español con la autoridad de la RAE</h1>
+            <h2>Curso completo con teoría y ejercicios prácticos sobre gramática, ortografía y estilo basado en el Libro de estilo de la lengua española según la norma panhispánica</h2>
+            <a href="#contact" class="cta-button">Solicitar licencia</a>
+            <a href="https://dominio-panhispanico.vercel.app/" target="_blank" class="cta-button demo-button">Ver demo</a>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Beneficios Clave</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Mejora garantizada en redacción</h3>
+                    <p>Desarrolle habilidades profesionales para comunicarse con precisión y elegancia en cualquier contexto.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Contenido académico de calidad</h3>
+                    <p>Material elaborado según las directrices de la Real Academia Española, garantizando la máxima rigurosidad lingüística.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Herramientas prácticas</h3>
+                    <p>Ejercicios interactivos y casos reales que le permitirán aplicar inmediatamente lo aprendido en su vida profesional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section class="modules">
+        <div class="container">
+            <h2 class="section-title">Módulos Disponibles</h2>
+            <div class="modules-grid">
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="module-content">
+                        <h3>Fundamentos del estilo</h3>
+                        <p>Introducción a la norma panhispánica y la RAE.</p>
+                    </div>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-spell-check"></i>
+                    </div>
+                    <div class="module-content">
+                        <h3>Cuestiones gramaticales</h3>
+                        <p>Dominio de la gramática esencial del español.</p>
+                    </div>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <div class="module-content">
+                        <h3>Ortografía y puntuación</h3>
+                        <p>Reglas de acentuación, puntuación y uso de mayúsculas.</p>
+                    </div>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-font"></i>
+                    </div>
+                    <div class="module-content">
+                        <h3>Ortotipografía y formato</h3>
+                        <p>Uso de tipografía, estilos, citas y referencias.</p>
+                    </div>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <div class="module-content">
+                        <h3>Pronunciación y elocución</h3>
+                        <p>Pautas para una pronunciación correcta y clara.</p>
+                    </div>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <div class="module-content">
+                        <h3>Escritura digital</h3>
+                        <p>Normas de comunicación en redes, emails y chats.</p>
+                    </div>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="module-content">
+                        <h3>Recursos y consulta</h3>
+                        <p>Cómo usar diccionarios y resolver dudas frecuentes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Details Section -->
+    <section class="course-details">
+        <div class="container">
+            <h2 class="section-title">Un Curso Completo para Profesionales</h2>
+            <div class="course-content">
+                <div class="course-image">
+                    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Biblioteca con libros de gramática y estilo español" id="course-img">
+                    <i id="fallback-icon" class="fas fa-landmark fallback-icon" style="display: none;"></i>
+                </div>
+                <div class="course-info">
+                    <h3>Domine las sutilezas del español</h3>
+                    <p>Nuestra aplicación de asesoría lingüística ha sido diseñada específicamente para profesionales hispanohablantes que desean perfeccionar su comunicación escrita.</p>
+                    <ul>
+                        <li>Módulos completos de gramática avanzada</li>
+                        <li>Normas ortográficas actualizadas</li>
+                        <li>Técnicas de estilo para diferentes contextos</li>
+                        <li>Ejercicios prácticos con retroalimentación inmediata</li>
+                        <li>Recursos adicionales y consultas especializadas</li>
+                    </ul>
+                    <p>Todo el contenido se basa en el Libro de estilo de la lengua española según la norma panhispánica, asegurando que adquiera conocimientos de la máxima autoridad lingüística.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <h2 class="section-title">Inversión en su Desarrollo Profesional</h2>
+            <div class="price-card">
+                <h3>Licencia de por vida</h3>
+                <div class="price">$49.00</div>
+                <div class="price-period">Acceso ilimitado a todos los contenidos y actualizaciones</div>
+                <p>Una sola inversión para mejorar permanentemente su comunicación escrita y proyectar una imagen profesional impecable.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h3>¿Listo para elevar su dominio del español?</h3>
+            <p>Solicite hoy mismo su licencia de por vida por solo $49.00 y comience a transformar sus habilidades de redacción profesional.</p>
+            
+            <form id="contact-form" class="contact-form" action="https://formspree.io/f/xanbbgdy" method="POST">
+                <div class="form-group">
+                    <label for="name">Nombre completo</label>
+                    <input type="text" id="name" name="name" placeholder="Ingrese su nombre completo" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="Ingrese su correo electrónico" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje (opcional)</label>
+                    <textarea id="message" name="message" placeholder="¿Tiene alguna pregunta o comentario?"></textarea>
+                </div>
+                <button type="submit" class="cta-button">Solicitar licencia ahora</button>
+                <div id="form-message" class="form-message"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Dominio del Español. Todos los derechos reservados. Basado en el Libro de estilo de la lengua española según la norma panhispánica.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Image loading with fallback
+        document.addEventListener('DOMContentLoaded', function() {
+            const img = document.getElementById('course-img');
+            const fallbackIcon = document.getElementById('fallback-icon');
+            
+            // List of fallback images in order
+            const fallbackImages = [
+                "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            ];
+            
+            let currentImageIndex = 0;
+            
+            // Function to try loading the next image
+            function tryNextImage() {
+                currentImageIndex++;
+                if (currentImageIndex < fallbackImages.length) {
+                    img.src = fallbackImages[currentImageIndex];
+                } else {
+                    // If all images fail, show the fallback icon
+                    img.style.display = 'none';
+                    fallbackIcon.style.display = 'block';
+                }
+            }
+            
+            // Set up error handler
+            img.onerror = tryNextImage;
+            
+            // If image is already broken (cached)
+            if (img.complete && img.naturalHeight === 0) {
+                tryNextImage();
+            }
+            
+            // Form submission
+            const form = document.getElementById('contact-form');
+            const formMessage = document.getElementById('form-message');
+            
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                // Show loading state
+                const submitButton = form.querySelector('button[type="submit"]');
+                const originalText = submitButton.textContent;
+                submitButton.textContent = 'Enviando...';
+                submitButton.disabled = true;
+                
+                // Submit form using fetch
+                fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Show success message
+                        formMessage.className = 'form-message success-message';
+                        formMessage.innerHTML = '<i class="fas fa-check-circle"></i> ¡Gracias por tu solicitud! Te contactaremos pronto.';
+                        formMessage.style.display = 'block';
+                        form.reset();
+                    } else {
+                        throw new Error('Error en el envío');
+                    }
+                })
+                .catch(error => {
+                    // Show error message
+                    formMessage.className = 'form-message error-message';
+                    formMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> Hubo un error al enviar el formulario. Por favor, intenta de nuevo más tarde.';
+                    formMessage.style.display = 'block';
+                })
+                .finally(() => {
+                    // Reset button
+                    submitButton.textContent = originalText;
+                    submitButton.disabled = false;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
