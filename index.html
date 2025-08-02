@@ -411,6 +411,12 @@
             font-size: 16px;
             transform: rotate(15deg);
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .bonus-badge:hover {
+            transform: rotate(0deg) scale(1.1);
         }
         
         .format-info {
@@ -991,6 +997,18 @@
             margin: 0 5px;
         }
         
+        .arje-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px dashed var(--accent-color);
+            transition: all 0.3s ease;
+        }
+        
+        .arje-link:hover {
+            border-bottom-style: solid;
+        }
+        
         .security-badges {
             display: flex;
             justify-content: center;
@@ -1110,7 +1128,7 @@
         <div class="container">
             <div class="urgency-content">
                 <i class="fas fa-fire"></i>
-                <span>Oferta limitada: solo los primeros 100 compradores reciben las 5 bonificaciones</span>
+                <span>Oferta limitada: solo los primeros 100 compradores reciben las 6 bonificaciones</span>
                 <div class="counter" id="urgency-counter">87 unidades restantes</div>
             </div>
         </div>
@@ -1121,7 +1139,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>El paquete definitivo para dominar el español profesional</h1>
-                <h2>Curso completo + 5 bonificaciones exclusivas por solo $79</h2>
+                <h2>Curso completo + 6 bonificaciones exclusivas por solo $79</h2>
                 
                 <div class="value-proposition">
                     <div class="value-item">
@@ -1140,7 +1158,7 @@
     <!-- Bonus Showcase Section -->
     <section class="bonus-showcase">
         <div class="container">
-            <h2 class="section-title">5 bonificaciones exclusivas (Valor: $155)</h2>
+            <h2 class="section-title">6 bonificaciones exclusivas (Valor: $180+)</h2>
             
             <div class="bonus-container">
                 <div class="bonus-item">
@@ -1157,7 +1175,7 @@
                     <div class="bonus-icon">
                         <i class="fas fa-book"></i>
                     </div>
-                    <h3>Libro: "Errores, dudas y dificultades del español"</h3>
+                    <h3>Libro: <em>Errores, dudas y dificultades del español</em></h3>
                     <p>Guía completa para resolver las dudas más comunes del español</p>
                     <div class="format-info">
                         <i class="fas fa-file-pdf"></i>
@@ -1172,7 +1190,7 @@
                     <div class="bonus-icon">
                         <i class="fas fa-briefcase"></i>
                     </div>
-                    <h3>Libro: "Redacción avanzada para el éxito empresarial"</h3>
+                    <h3>Libro: <em>Redacción avanzada para el éxito empresarial</em></h3>
                     <p>Técnicas avanzadas de redacción aplicadas al entorno empresarial y profesional</p>
                     <div class="format-info">
                         <i class="fas fa-file-pdf"></i>
@@ -1187,7 +1205,7 @@
                     <div class="bonus-icon">
                         <i class="fas fa-file-alt"></i>
                     </div>
-                    <h3>Libro: "Guía práctica de redacción de documentos empresariales"</h3>
+                    <h3>Libro: <em>Guía práctica de redacción de documentos empresariales</em></h3>
                     <p>Herramientas esenciales para redactar documentos profesionales con precisión y estilo</p>
                     <div class="format-info">
                         <i class="fas fa-file-pdf"></i>
@@ -1202,7 +1220,7 @@
                     <div class="bonus-icon">
                         <i class="fas fa-book-open"></i>
                     </div>
-                    <h3>Libro: "Errores, dudas y dificultades del español, volumen 2"</h3>
+                    <h3>Libro: <em>Errores, dudas y dificultades del español, volumen 2</em></h3>
                     <p>Continuación de la guía completa con más casos prácticos y soluciones detalladas</p>
                     <div class="format-info">
                         <i class="fas fa-file-pdf"></i>
@@ -1212,6 +1230,22 @@
                     <div class="bonus-value">Valor: $29</div>
                     <a href="https://payhip.com/b/ApM7v" target="_blank" class="bonus-link">Verificar precio →</a>
                     <div class="bonus-badge">GRATIS</div>
+                </div>
+                
+                <div class="bonus-item">
+                    <div class="bonus-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <h3>Descuento exclusivo 25% en libros Arjé</h3>
+                    <p>Cupón de 25% de descuento válido para cualquier libro de la prestigiosa editorial Arjé</p>
+                    <div class="format-info">
+                        <i class="fas fa-book"></i>
+                        <i class="fas fa-percentage"></i>
+                        Catálogo completo
+                    </div>
+                    <div class="bonus-value">Valor: $25+</div>
+                    <a href="https://payhip.com/editorialarje" target="_blank" class="bonus-link">Ver catálogo Arjé →</a>
+                    <div class="bonus-badge" onclick="window.open('https://payhip.com/editorialarje', '_blank')">EXCLUSIVO</div>
                 </div>
             </div>
         </div>
@@ -1232,10 +1266,11 @@
                     <ul class="package-features">
                         <li>Curso completo de español</li>
                         <li>Chatbot tutor de redacción</li>
-                        <li>Libro "Errores, dudas..."</li>
-                        <li>Libro "Redacción avanzada..."</li>
-                        <li>Libro "Guía práctica..."</li>
-                        <li>Libro "Errores, dudas... vol.2"</li>
+                        <li>Libro <em>Errores, dudas...</em></li>
+                        <li>Libro <em>Redacción avanzada...</em></li>
+                        <li>Libro <em>Guía práctica...</em></li>
+                        <li>Libro <em>Errores, dudas... vol.2</em></li>
+                        <li>Descuento 25% en libros Arjé</li>
                     </ul>
                     <div class="package-cta">
                         <a href="#" class="cta-button" style="background-color: var(--gray-color); cursor: not-allowed;">Comprar por separado</a>
@@ -1251,10 +1286,11 @@
                     <ul class="package-features">
                         <li>Curso completo de español</li>
                         <li>Chatbot tutor de redacción</li>
-                        <li>Libro "Errores, dudas..."</li>
-                        <li>Libro "Redacción avanzada..."</li>
-                        <li>Libro "Guía práctica..."</li>
-                        <li>Libro "Errores, dudas... vol.2"</li>
+                        <li>Libro <em>Errores, dudas...</em></li>
+                        <li>Libro <em>Redacción avanzada...</em></li>
+                        <li>Libro <em>Guía práctica...</em></li>
+                        <li>Libro <em>Errores, dudas... vol.2</em></li>
+                        <li>Descuento 25% en libros Arjé</li>
                         <li>Acceso de por vida</li>
                         <li>Actualizaciones gratuitas</li>
                     </ul>
@@ -1284,17 +1320,17 @@
                 <div class="benefit-card">
                     <i class="fas fa-book-open"></i>
                     <h3>Biblioteca especializada</h3>
-                    <p>Acceso a cuatro libros de Moris Polanco que complementan perfectamente su aprendizaje.</p>
+                    <p>Acceso a cinco libros de Moris Polanco que complementan perfectamente su aprendizaje.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-tag"></i>
+                    <h3>Descuentos exclusivos</h3>
+                    <p>Ahorre 25% en cualquier libro de la prestigiosa editorial Arjé con su cupón personal. <a href="https://payhip.com/editorialarje" target="_blank" class="arje-link">Ver catálogo</a></p>
                 </div>
                 <div class="benefit-card">
                     <i class="fas fa-certificate"></i>
                     <h3>Autoridad RAE</h3>
                     <p>Contenido validado por la máxima autoridad lingüística del español.</p>
-                </div>
-                <div class="benefit-card">
-                    <i class="fas fa-briefcase"></i>
-                    <h3>Enfoque profesional</h3>
-                    <p>Material diseñado para mejorar su comunicación en entornos empresariales y académicos.</p>
                 </div>
                 <div class="benefit-card">
                     <i class="fas fa-infinity"></i>
@@ -1455,7 +1491,7 @@
         <div class="container">
             <div class="final-cta-content">
                 <h3>¿Listo para elevar su dominio del español?</h3>
-                <p>Compre hoy mismo su paquete premium por solo $79.00 y reciba cinco bonificaciones exclusivas: el chatbot tutor de redacción y cuatro libros de Moris Polanco valorados en $155.00. Tres libros en formato PDF y "Errores, dudas y dificultades del español, volumen 2" en PDF y .epub. Oferta válida solo para los primeros 100 compradores.</p>
+                <p>Compre hoy mismo su paquete premium por solo $79.00 y reciba seis bonificaciones exclusivas: el chatbot tutor de redacción, cuatro libros de Moris Polanco valorados en $155.00 y un cupón de 25% de descuento para cualquier libro de la editorial Arjé. Tres libros en formato PDF y <em>Errores, dudas y dificultades del español, volumen 2</em> en PDF y .epub. Oferta válida solo para los primeros 100 compradores.</p>
                 
                 <div class="price-highlight">
                     <div class="original-price">$284</div>
@@ -1472,7 +1508,7 @@
                                 </div>
                                 <div class="payment-option-text">
                                     <h4>Paquete premium completo</h4>
-                                    <p>Curso + 5 bonificaciones exclusivas</p>
+                                    <p>Curso + 6 bonificaciones exclusivas</p>
                                 </div>
                             </div>
                             <div class="payment-option-price">$79</div>
@@ -1483,7 +1519,10 @@
                         <i class="fas fa-file-pdf"></i> 3 libros en formato PDF
                         <span style="margin: 0 10px;">|</span>
                         <i class="fas fa-file-pdf"></i>
-                        <i class="fas fa-tablet-alt"></i> "Errores vol.2" en PDF y .epub
+                        <i class="fas fa-tablet-alt"></i> <em>Errores vol.2</em> en PDF y .epub
+                        <span style="margin: 0 10px;">|</span>
+                        <i class="fas fa-tag"></i>
+                        <i class="fas fa-percentage"></i> 25% descuento en <a href="https://payhip.com/editorialarje" target="_blank" class="arje-link">libros Arjé</a>
                     </div>
                     
                     <a href="https://buy.stripe.com/3cIaEXeil0wkaBZ8Y43AY0W" target="_blank" class="stripe-button">
